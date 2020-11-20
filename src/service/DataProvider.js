@@ -17,6 +17,7 @@ export default {
        if(typeof assunto != "undefined" ){
         url+= `&assunto=${assunto}`
       }
+     
       const situacao = params.filter.situacao
       if(typeof situacao != "undefined" ){
         url+= `&situacao=${situacao}`
