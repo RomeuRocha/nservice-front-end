@@ -1,17 +1,20 @@
 import React from "react";
-import { ShowButton, List, Datagrid, TextField, EditButton, NumberField, DateField, SelectInput } from 'react-admin';
+import { ShowButton, List, Datagrid, TextField, EditButton, NumberField, DateField, SelectInput, DateInput, DateTimeInput } from 'react-admin';
 
 import { Filter, TextInput } from 'react-admin';
 
+
 const OrdemServicoFilterSeach = (props) => (
     <Filter {...props}>
-        <TextInput label="Pesquisar por cliente" source="cliente" alwaysOn />
-        <TextInput label="Pesquisar por Assunto" source="assunto" />
-        <SelectInput source="situacao" label="Situação" choices={[
+        <TextInput label="Pesquisar cliente" source="cliente" alwaysOn />
+        <TextInput label="Pesquisar Assunto" source="assunto" />
+        <SelectInput source="situacao" label="Pesquisar Situação" choices={[
             { id: '1', name: 'Agendado' },
             { id: '2', name: 'Concluído' },
             { id: '3', name: 'Cancelado' },
         ]} />
+        
+        <DateInput source="dataInicial" label="Pesquisar Data Inicial"/>
        
     </Filter>
 );

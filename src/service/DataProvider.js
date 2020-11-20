@@ -22,7 +22,11 @@ export default {
       if(typeof situacao != "undefined" ){
         url+= `&situacao=${situacao}`
       }
-   
+      const dataInicial = params.filter.dataInicial
+      if(typeof dataInicial != "undefined" ){
+        url+= `&dataInicial=${dataInicial}`
+      }
+      
         return httpClient(url).then((response) => ({
             data: response.json.content,
             total: response.json.totalPages
