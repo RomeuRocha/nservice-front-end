@@ -11,7 +11,7 @@ const ServicoEditActions = ({ basePath, data }) => (
 );
 
 export const ServicoEdit = props => (
-    <Edit {...props} title="Editar Serviço" actions={<ServicoEditActions />}>
+    <Edit {...props}  actions={<ServicoEditActions />} redirect="list">
         <SimpleForm>
             <TextInput disabled source="id" />
             <TextInput source="description" />

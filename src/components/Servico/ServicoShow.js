@@ -1,11 +1,12 @@
 import  React from "react";
 import { Show, SimpleShowLayout, TextField,NumberField } from 'react-admin';
 
-import { TopToolbar, ListButton } from 'react-admin';
+import { TopToolbar, ListButton,EditButton } from 'react-admin';
 
 const ServicoShowActions = ({ basePath, data }) => (
     <TopToolbar>
         <ListButton basePath={basePath} />
+        <EditButton basePath={basePath} record={data}/>
     </TopToolbar>
 );
 

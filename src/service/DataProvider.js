@@ -8,11 +8,16 @@ export default {
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
         const {order, field } = params.sort;
-        const seach = params.filter.description
+        const nomeCliente = params.filter.cliente
        let url = `${apiUrl}/${resource}?linesPerPage=${perPage}&orderBy=${field}&direction=${order}&page=${page-1}`;
-       if(typeof seach != "undefined" ){
-         url+= `&field=${seach}`
+       if(typeof nomeCliente != "undefined" ){
+         url+= `&cliente=${nomeCliente}`
        }
+       const assunto = params.filter.assunto
+       if(typeof assunto != "undefined" ){
+        url+= `&assunto=${assunto}`
+      }
+   
         return httpClient(url).then((response) => ({
             data: response.json.content,
             total: response.json.totalPages

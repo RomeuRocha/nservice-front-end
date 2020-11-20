@@ -18,6 +18,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import {AssuntoList} from './components/Assunto/AssuntoList'
 import {AssuntoEdit} from './components/Assunto/AssuntoEdit'
 import {AssuntoCreate} from './components/Assunto/AssuntoCreate'
+import {AssuntoShow} from './components/Assunto/AssuntoShow'
 import SubjectIcon from '@material-ui/icons/Subject';
 
 import {ClienteList} from './components/cliente/ClienteList'
@@ -34,16 +35,26 @@ import StorageIcon from '@material-ui/icons/Storage';
 import {OrdemservicoList} from './components/OrdemServico/OrdemServicoList'
 import {OrdemServicoEdit} from './components/OrdemServico/OrdemServicoEdit'
 
+
+import logo from './logo.png'
+const Logo = ()  => {
+    return(
+        <div>
+            <img src={logo}></img>
+        </div>
+    )
+}
+
 function App(){
 
   return(
-    <Admin title="Nservice" dataProvider={DataProvider} dashboard={Dashboard}>
-       <Resource name="servico" options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} />
-       <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
+      <Admin title={<Logo />} dataProvider={DataProvider} dashboard={Dashboard}>
+       <Resource name="servico" title={<Logo />} options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} /> 
+       <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={AssuntoShow} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>
        <Resource name="funcionario" options={{ label: 'Funcionários' }} list={FuncionarioList} edit={FuncionarioEdit} create={FuncionarioCreate} show={ShowGuesser} icon={AssignmentIndIcon}/>
-       <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemservicoList} edit={OrdemServicoEdit} create={FuncionarioCreate} show={ShowGuesser} icon={StorageIcon}/>
-    </Admin>
+       <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemservicoList} edit={OrdemServicoEdit}  show={ShowGuesser} icon={StorageIcon}/>     
+      </Admin>
   )
 
 }
