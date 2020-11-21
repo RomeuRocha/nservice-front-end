@@ -28,7 +28,6 @@ export const OrdemservicoList = props => (
             <NumberField source="cliente.nome" label="Cliente" />
             <NumberField source="assunto.description" label="Assunto" />
             <DateField source="saveMoment" label="Data de inicio" />
-            <DateField source="dateSchedule" label="Data de agendamento" />
             <DateField source="attendance" label="Data de atendimento" />
             <TextField source="situation" label="Situação" />
 
