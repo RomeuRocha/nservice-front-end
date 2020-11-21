@@ -15,6 +15,7 @@ const OrdemServicoFilterSeach = (props) => (
         ]} />
         
         <DateInput source="dataInicial" label="Pesquisar Data Inicial"/>
+        <DateInput source="dataFinal" label="Pesquisar Data Final"/>
        
     </Filter>
 );

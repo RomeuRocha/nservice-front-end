@@ -26,6 +26,12 @@ export default {
       if(typeof dataInicial != "undefined" ){
         url+= `&dataInicial=${dataInicial}`
       }
+
+      const dataFinal = params.filter.dataFinal
+      if(typeof dataFinal != "undefined" ){
+        url+= `&dataFinal=${dataFinal}`
+       
+      }
       
         return httpClient(url).then((response) => ({
             data: response.json.content,
