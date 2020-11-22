@@ -45,11 +45,11 @@ export default {
         })),
 
     getMany: (resource, params) => {
-        const query = {
-            filter: JSON.stringify({ id: params.ids }),
-        };
-        const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        return httpClient(url).then(({ json }) => ({ data: json }));
+        
+        return httpClient(`${apiUrl}/${resource}/many/${params.ids}`, {
+            method: 'GET',
+            body: JSON.stringify(params.data),
+        }).then(({ json }) => ({ data: json }));
     },
 
     getManyReference: (resource, params) => {
