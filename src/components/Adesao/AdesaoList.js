@@ -12,7 +12,8 @@ const AdesaoFilterSeach = (props) => (
 
 
 export const AdesaoList = props => (
-    <List {...props} filters={<AdesaoFilterSeach />} title="Ordem de Serviço">
+    
+    <List {...props} filters={<AdesaoFilterSeach />} >
         <Datagrid rowClick="show">
             <TextField source="id" />
             <NumberField source="cliente.nome" label="Nome"/>

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 import { Admin, Resource,ListGuesser,EditGuesser,ShowGuesser} from 'react-admin';
+import MyLayout from './components/Layout/MyLayout'
 
 import DataProvider from './service/DataProvider'
 
@@ -50,10 +51,11 @@ import {AdesaoCreate} from './components/Adesao/AdesaoCreate'
 
 
 
+
 function App(){
 
   return(
-    <Admin title="Nservice" dataProvider={DataProvider} dashboard={Dashboard}>
+    <Admin title="Nservice" layout={MyLayout} dataProvider={DataProvider} dashboard={Dashboard}>
        <Resource name="servico" options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} />
        <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>
@@ -62,7 +64,7 @@ function App(){
        <Resource name="plano" list={PlanoList} edit={PlanoEdit} create={PlanoCreate} show={ShowGuesser} icon={ListAltIcon}/>
        <Resource name="cancelamento" list={CancelamentoList} edit={CancelamentoEdit} create={CancelamentoCreate} show={ShowGuesser} icon={StorageIcon}/>
        <Resource name="adesao" list={AdesaoList} edit={AdesaoEdit} create={AdesaoCreate} show={ShowGuesser} icon={StorageIcon}/>
-       
+    
     </Admin>
   )
 
