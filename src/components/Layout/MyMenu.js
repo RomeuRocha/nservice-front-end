@@ -59,7 +59,7 @@ const Menu = ({ onMenuClick, logout }) => {
 
     return (
         <div>
-          {/*  {resources.map(resource => (
+            {/*  {resources.map(resource => (
                 <MenuItemLink
                     key={resource.name}
                     to={`/${resource.name}`}
@@ -76,28 +76,7 @@ const Menu = ({ onMenuClick, logout }) => {
             ))} */}
 
             <List component="nav" >
-                
-                <MenuItemLink to="/funcionario" primaryText="Funcionários" leftIcon={<AssignmentIndIcon/>}/>
-                
-                <ListItem button onClick={handleClick} >
-                    <AssignmentIcon />
-                    <MenuItem>Ordem de Serviços</MenuItem>
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
 
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding className={classes.listInterna}>
-                        <MenuItemLink to="/ordemservico/create" primaryText="Nova" leftIcon={<ControlPointIcon/>} />
-                        <MenuItemLink to="/ordemservico" primaryText="Lista se OS" leftIcon={<ListIcon/>} />
-                        <MenuItemLink to="/servico" primaryText="Serviços" leftIcon={<WorkIcon/>}/>
-                        <MenuItemLink to="/assunto" primaryText="Assuntos" leftIcon={<SubjectIcon/>}/>
-                    </List>
-                </Collapse>
-
-                
-                <MenuItemLink to="/cliente" primaryText="Clientes" leftIcon={<GroupIcon/>}/>
-                
-          
                 <ListItem button onClick={handleClick1} >
                     <PostAddIcon />
                     <MenuItem>Adesao</MenuItem>
@@ -106,12 +85,33 @@ const Menu = ({ onMenuClick, logout }) => {
 
                 <Collapse in={open1} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding className={classes.listInterna}>
-                        <MenuItemLink to="/adesao/create" primaryText="Nova Adesão" leftIcon={<ControlPointIcon/>}/>
-                        <MenuItemLink to="/adesao" primaryText="Lista de Adesões" leftIcon={<ListIcon/>}/>
-                        <MenuItemLink to="/plano" primaryText="Planos" leftIcon={<EventNoteIcon/>}/>
-                        <MenuItemLink to="/cancelamento" primaryText="Cancelamentos" leftIcon={<NoSimIcon/>}/>
+                        <MenuItemLink to="/adesao/create" primaryText="Nova Adesão" leftIcon={<ControlPointIcon />} />
+                        <MenuItemLink to="/adesao" primaryText="Lista de Adesões" leftIcon={<ListIcon />} />
+                        <MenuItemLink to="/plano" primaryText="Planos" leftIcon={<EventNoteIcon />} />
+                        <MenuItemLink to="/cancelamento" primaryText="Cancelamentos" leftIcon={<NoSimIcon />} />
                     </List>
                 </Collapse>
+
+                <ListItem button onClick={handleClick} >
+                    <AssignmentIcon />
+                    <MenuItem>Ordem de Serviços</MenuItem>
+                    {open ? <ExpandLess /> : <ExpandMore />}
+                </ListItem>
+
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding className={classes.listInterna}>
+                        <MenuItemLink to="/ordemservico/create" primaryText="Nova" leftIcon={<ControlPointIcon />} />
+                        <MenuItemLink to="/ordemservico" primaryText="Lista se OS" leftIcon={<ListIcon />} />
+                        <MenuItemLink to="/servico" primaryText="Serviços" leftIcon={<WorkIcon />} />
+                        <MenuItemLink to="/assunto" primaryText="Assuntos" leftIcon={<SubjectIcon />} />
+                    </List>
+                </Collapse>
+
+
+                <MenuItemLink to="/cliente" primaryText="Clientes" leftIcon={<GroupIcon />} />
+
+                <MenuItemLink to="/funcionario" primaryText="Funcionários" leftIcon={<AssignmentIndIcon />} />
+
 
 
             </List>

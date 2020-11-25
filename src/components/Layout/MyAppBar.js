@@ -23,7 +23,7 @@ const MyAppBar = props => {
         <AppBar {...props} color="primary">
             <Typography
                 variant="h6"
-                color="default"
+                color="inherit"
                 className={classes.title}
                 id="react-admin-title"
             />

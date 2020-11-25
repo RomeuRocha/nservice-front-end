@@ -49,13 +49,20 @@ import {AdesaoEdit} from './components/Adesao/AdesaoEdit'
 import {AdesaoCreate} from './components/Adesao/AdesaoCreate'
 
 
+import { createMuiTheme } from '@material-ui/core/styles';
+import {myTheme} from './components/Layout/MyTheme'
 
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark', // Switching the dark mode on is a single property value change.
+  },
+});
 
 
 function App(){
 
   return(
-    <Admin title="Nservice" layout={MyLayout} dataProvider={DataProvider} dashboard={Dashboard}>
+    <Admin title="Nservice" layout={MyLayout} theme={theme} dataProvider={DataProvider} dashboard={Dashboard}>
        <Resource name="servico" options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} />
        <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>
