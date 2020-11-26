@@ -16,8 +16,6 @@ export default props => {
     const [clientSelec,setClientSelect] = useState();
     const [currentClient, setCurrentClient] = useState(null);
 
-
-
     useEffect(() => {
         retrieveTutorials();
     }, []);
@@ -38,7 +36,6 @@ export default props => {
         <div style={{ height: 400, width: '100%' }}>
             <DataGrid rows={clients} columns={columns} pageSize={24}  onRowSelected={props.cliente} />
         </div>
-
 
     )
 
