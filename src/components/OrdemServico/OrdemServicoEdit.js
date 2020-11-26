@@ -10,44 +10,34 @@ import {
     ReferenceInput,
     SelectInput,
     TabbedForm,
-    FormTab
+    FormTab,
+    required 
 } from 'react-admin';
 
 export const OrdemServicoEdit = props => (
     <Edit {...props}>
-        <TabbedForm>
-            <FormTab label="Informações básicas">
-                <ReferenceInput label="Cliente" source="cliente.id" reference="cliente">
-                    <SelectInput optionText="nome" />
-                </ReferenceInput>
-                <TextInput source="situation" disabled/>
-                <ReferenceInput label="Assunto" source="assunto.id" reference="assunto">
-                    <SelectInput optionText="description" />
-                </ReferenceInput>
-                
-                <DateInput label="Data de abertura" source="saveMoment" disabled/>
-                <DateInput label="Data de Agendamento" source="dateSchedule" />
-                <DateInput label="Data de Atendimento" source="attendance" />
-                
-            </FormTab>
-            <FormTab label="Dados">
-                <TextInput source="id" options={{ label: "Id" }} disabled />
+        <SimpleForm>
+            <TextInput source="id" disabled />
+            <ReferenceInput label="Cliente" source="cliente.id" reference="cliente" validate={[required()]}>
+                <SelectInput optionText="nome" />
+            </ReferenceInput>
 
-                <SelectInput source="cliente" optionText="nome" />
+            <ReferenceInput label="Assunto" source="assunto.id" reference="assunto" validate={[required()]}>
+                <SelectInput optionText="description" />
+            </ReferenceInput>
 
-                <TextInput source="cliente.nome" />
-                <NumberInput source="funcionario.nome" options={{ label: "Funcionário" }} />
-                
-
-                
-                <ArrayInput source="servicos">
-                    <SimpleFormIterator>
-                        <TextInput source="id" />
-                        <TextInput source="description" />
-                        <NumberInput source="value" />
-                    </SimpleFormIterator></ArrayInput>
-            </FormTab>
-
-        </TabbedForm>
+            <ReferenceInput label="Funcionario responsável" source="funcionario.id" reference="funcionario" validate={[required()]}>
+                <SelectInput optionText="nome" />
+            </ReferenceInput>
+           
+            
+            <DateInput source="saveMoment" />
+            <DateInput source="dateSchedule" />
+            <DateInput source="attendance" label="Data de atendimento"/>
+            <TextInput source="situation" />
+            <ArrayInput source="servicos"><SimpleFormIterator><TextInput source="id" />
+            <TextInput source="description" />
+            <NumberInput source="value" /></SimpleFormIterator></ArrayInput>
+        </SimpleForm>
     </Edit>
 );

@@ -21,7 +21,7 @@ const OrdemServicoFilterSeach = (props) => (
 );
 
 
-export const OrdemservicoList = props => (
+export const OrdemServicoList = props => (
     <List {...props} filters={<OrdemServicoFilterSeach />} title="Ordem de Serviço">
         <Datagrid rowClick="show">
             <TextField source="id" label="id" />

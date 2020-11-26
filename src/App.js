@@ -32,8 +32,10 @@ import {FuncionarioEdit} from './components/Funcionario/FuncionarioEdit'
 import {FuncionarioCreate} from './components/Funcionario/FuncionarioCreate'
 
 import StorageIcon from '@material-ui/icons/Storage';
-import {OrdemservicoList} from './components/OrdemServico/OrdemServicoList'
+import {OrdemServicoList} from './components/OrdemServico/OrdemServicoList'
 import {OrdemServicoEdit} from './components/OrdemServico/OrdemServicoEdit'
+import {OrdemServicoCreate} from './components/OrdemServico/OrdemServicoCreate'
+
 
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import {PlanoList} from './components/Planos/PlanoList'
@@ -60,7 +62,7 @@ function App(){
        <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>
        <Resource name="funcionario" options={{ label: 'Funcionários' }} list={FuncionarioList} edit={FuncionarioEdit} create={FuncionarioCreate} show={ShowGuesser} icon={AssignmentIndIcon}/>
-       <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemservicoList} edit={OrdemServicoEdit} create={FuncionarioCreate} show={ShowGuesser} icon={StorageIcon}/>
+       <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemServicoList} edit={OrdemServicoEdit} create={OrdemServicoCreate} show={ShowGuesser} icon={StorageIcon}/>
        <Resource name="plano" list={PlanoList} edit={PlanoEdit} create={PlanoCreate} show={ShowGuesser} icon={ListAltIcon}/>
        <Resource name="cancelamento" list={CancelamentoList} edit={CancelamentoEdit} create={CancelamentoCreate} show={ShowGuesser} icon={StorageIcon}/>
        <Resource name="adesao" list={AdesaoList} edit={AdesaoEdit} create={AdesaoCreate} show={ShowGuesser} icon={StorageIcon}/>

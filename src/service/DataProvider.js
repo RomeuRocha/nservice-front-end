@@ -9,6 +9,7 @@ export default {
         const { page, perPage } = params.pagination;
         const {order, field } = params.sort;
         const nomeCliente = params.filter.cliente
+      
        let url = `${apiUrl}/${resource}?linesPerPage=${perPage}&orderBy=${field}&direction=${order}&page=${page-1}`;
        if(typeof nomeCliente != "undefined" ){
          url+= `&cliente=${nomeCliente}`
