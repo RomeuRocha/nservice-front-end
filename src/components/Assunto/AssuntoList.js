@@ -1,5 +1,8 @@
 import  React from "react";
-import { List, Datagrid, TextField,EditButton,ShowButton,DeleteButton } from 'react-admin';
+import { List, Datagrid, TextField,DeleteButton } from 'react-admin';
+import EditButton from '../Util/EditButton'
+import ShowButton from '../Util/ShowButton'
+import ListActions from '../Util/MyActions'
 
 import {Filter,TextInput} from 'react-admin';
 
@@ -11,7 +14,7 @@ const AssuntoFilterSeach = (props) => (
 );
 
 export const AssuntoList = props => (
-    <List {...props} filters={<AssuntoFilterSeach />} title="Assuntos">
+    <List {...props} actions={<ListActions/>} filters={<AssuntoFilterSeach />} title="Assuntos">
         <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="description" />

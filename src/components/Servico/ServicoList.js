@@ -1,6 +1,8 @@
 import  React from "react";
-import { List, Datagrid, TextField,NumberField,EditButton,ShowButton } from 'react-admin';
-
+import { List, Datagrid, TextField,NumberField} from 'react-admin';
+import EditButton from '../Util/EditButton'
+import ShowButton from '../Util/ShowButton'
+import ListActions from '../Util/MyActions'
 import {Filter,TextInput} from 'react-admin';
 
 
@@ -11,7 +13,7 @@ const ServicoFilterSeach = (props) => (
 );
 
 export const ServicoList = props => (
-    <List {...props} title="Serviços" filters={<ServicoFilterSeach />} >
+    <List {...props} actions={<ListActions/>} title="Serviços" filters={<ServicoFilterSeach />} >
         <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="description" />
