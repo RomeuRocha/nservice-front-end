@@ -1,6 +1,8 @@
 import React from "react";
-import { ShowButton, List, Datagrid, TextField, EditButton, NumberField, DateField, SelectInput, DateInput, DateTimeInput } from 'react-admin';
-
+import { List, Datagrid, TextField, NumberField, DateField, SelectInput, DateInput, DateTimeInput } from 'react-admin';
+import EditButton from '../Util/EditButton'
+import ShowButton from '../Util/ShowButton'
+import ListActions from '../Util/MyActions'
 import { Filter, TextInput } from 'react-admin';
 
 
@@ -13,14 +15,15 @@ const AdesaoFilterSeach = (props) => (
 
 export const AdesaoList = props => (
     
-    <List {...props} filters={<AdesaoFilterSeach />} >
+    <List {...props} actions={<ListActions/>} filters={<AdesaoFilterSeach />} >
         <Datagrid rowClick="show">
             <TextField source="id" />
             <NumberField source="cliente.nome" label="Nome"/>
             <NumberField source="plano.nome" label="Plano"/>
             <NumberField source="valor" />
             <DateField source="data" />
-             <EditButton/>      
+             <EditButton/>
+             <ShowButton/>      
         </Datagrid>
     </List>
 

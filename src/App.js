@@ -50,7 +50,7 @@ import {AdesaoCreate} from './components/Adesao/AdesaoCreate'
 
 
 import { createMuiTheme } from '@material-ui/core/styles';
-import {myTheme} from './components/Layout/MyTheme'
+import myTheme from './components/Layout/MyTheme'
 
 const theme = createMuiTheme({
   palette: {

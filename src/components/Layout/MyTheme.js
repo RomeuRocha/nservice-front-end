@@ -2,14 +2,20 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import indigo from '@material-ui/core/colors/indigo';
 import pink from '@material-ui/core/colors/pink';
 import red from '@material-ui/core/colors/red';
+import purple from '@material-ui/core/colors/purple';
 
-const myThem = createMuiTheme({
+const myTheme = createMuiTheme({
     palette: {
-        primary: indigo,
-        secondary: pink,
-        error: red,
-        contrastThreshold: 3,
-        tonalOffset: 0.2,
+      
+        palette: {
+          primary: {
+            main: purple[500],
+          },
+          secondary: {
+            main: '#f44336',
+          },
+        },
+      
     },
     typography: {
         // Use the system font instead of the default Roboto font.
@@ -30,4 +36,4 @@ const myThem = createMuiTheme({
     },
 });
 
-export default myThem;
+export default myTheme;

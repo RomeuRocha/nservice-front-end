@@ -46,6 +46,7 @@ const Menu = ({ onMenuClick, logout }) => {
 
     const [open, setOpen] = React.useState(true);
     const [open1, setOpen1] = React.useState(true);
+    const [open2, setOpen2] = React.useState(true);
 
     const classes = useStyles();
 
@@ -55,6 +56,9 @@ const Menu = ({ onMenuClick, logout }) => {
     };
     const handleClick1 = () => {
         setOpen1(!open1);
+    };
+    const handleClick2 = () => {
+        setOpen2(!open2);
     };
 
     return (
@@ -107,8 +111,20 @@ const Menu = ({ onMenuClick, logout }) => {
                     </List>
                 </Collapse>
 
+                <ListItem button onClick={handleClick2} >
+                    <GroupIcon/>
+                    <MenuItem>Cliente</MenuItem>
+                    {open2 ? <ExpandLess /> : <ExpandMore />}
+                </ListItem>
 
-                <MenuItemLink to="/cliente" primaryText="Clientes" leftIcon={<GroupIcon />} />
+                <Collapse in={open2} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding className={classes.listInterna}>
+                        <MenuItemLink to="/cliente/create" primaryText="Novo" leftIcon={<ControlPointIcon />} />
+                        <MenuItemLink to="/cliente" primaryText="Lista de Clientes" leftIcon={<ListIcon />} />
+                        
+                    </List>
+                </Collapse>
+
 
                 <MenuItemLink to="/funcionario" primaryText="Funcionários" leftIcon={<AssignmentIndIcon />} />
 

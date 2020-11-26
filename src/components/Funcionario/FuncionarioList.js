@@ -1,7 +1,10 @@
 import  React from "react";
-import { List, Datagrid, TextField,EditButton,EmailField } from 'react-admin';
-
-import {Filter,TextInput,ShowButton} from 'react-admin';
+import { List, Datagrid, TextField} from 'react-admin';
+import EditButton from '../Util/EditButton'
+import EmailField from '../Util/EmailField'
+import ShowButton from '../Util/ShowButton'
+import ListActions from '../Util/MyActions'
+import {Filter,TextInput} from 'react-admin';
 
 const FuncionarioFilterSeach = (props) => (
     <Filter {...props}>
@@ -10,7 +13,7 @@ const FuncionarioFilterSeach = (props) => (
 );
 
 export const FuncionarioList = props => (
-    <List {...props} filters={<FuncionarioFilterSeach />}>
+    <List {...props} actions={<ListActions/>} filters={<FuncionarioFilterSeach />}>
         <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="nome" />
