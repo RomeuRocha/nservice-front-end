@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@devexpress/dx-react-core": "^2.7.3",
+    "@devexpress/dx-react-scheduler": "^2.7.3",
+    "@devexpress/dx-react-scheduler-material-ui": "^2.7.3",
     "@material-ui/data-grid": "^4.0.0-alpha.10",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
@@ -10,6 +13,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.1.0",
+    "dhtmlx-scheduler": "^5.3.10",
     "ra-data-json-server": "^3.10.0",
     "ra-data-simple-rest": "^3.9.3",
     "react": "^17.0.1",

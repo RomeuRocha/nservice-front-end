@@ -23,7 +23,10 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 
+import Agenda from '../Scheduler/Agenda'
+
 import MenuItem from '@material-ui/core/MenuItem';
+import Scheduler from '../Scheduler/Scheduler'
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -47,6 +50,7 @@ const Menu = ({ onMenuClick, logout }) => {
     const [open, setOpen] = React.useState(true);
     const [open1, setOpen1] = React.useState(true);
     const [open2, setOpen2] = React.useState(true);
+    const [open3, setOpen3] = React.useState(true);
 
     const classes = useStyles();
 
@@ -59,6 +63,9 @@ const Menu = ({ onMenuClick, logout }) => {
     };
     const handleClick2 = () => {
         setOpen2(!open2);
+    };
+    const handleClick3 = () => {
+        setOpen3(!open3);
     };
 
     return (
@@ -125,8 +132,21 @@ const Menu = ({ onMenuClick, logout }) => {
                     </List>
                 </Collapse>
 
+                <ListItem button onClick={handleClick3} >
+                    <GroupIcon/>
+                    <MenuItem>Administração</MenuItem>
+                    {open3 ? <ExpandLess /> : <ExpandMore />}
+                </ListItem>
 
-                <MenuItemLink to="/funcionario" primaryText="Funcionários" leftIcon={<AssignmentIndIcon />} />
+                <Collapse in={open3} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding className={classes.listInterna}>
+                        <MenuItemLink to={"15"} primaryText="Calender" leftIcon={<AssignmentIndIcon />} />
+                        <MenuItemLink to="/" primaryText="Dashboard" leftIcon={<ControlPointIcon />} />
+                        
+                        
+                    </List>
+                </Collapse>
+                
 
 
 
