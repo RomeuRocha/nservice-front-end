@@ -33,7 +33,7 @@ export default {
         url+= `&dataFinal=${dataFinal}`
        
       }
-      
+    
         return httpClient(url).then((response) => ({
             data: response.json.content,
             total: response.json.totalPages

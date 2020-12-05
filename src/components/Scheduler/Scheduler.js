@@ -16,7 +16,6 @@ import {
 } from '@devexpress/dx-react-scheduler-material-ui';
 import ApiService from '../../service/ApiService'
 
-
 const resources = [{
     fieldName: 'type',
     title: 'Type',
