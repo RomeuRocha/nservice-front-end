@@ -69,7 +69,7 @@ const resources = [{
         { id: 'Agendado', text: 'Pendente', color: '#b5ae49' },
         { id: 'Concluído', text: 'Concluído', color: '#258045' },
         { id: 'Cancelado', text: 'Cancelado', color: '#fcc001' },
-        { id: 'Assumido', text: 'Assumido', color: '#b00606' },
+        { id: 'Agendado', text: 'Assumido', color: '#b00606' },
     ],
 }];
 

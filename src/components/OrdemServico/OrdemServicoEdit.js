@@ -23,11 +23,10 @@ import EventIcon from '@material-ui/icons/Event';
 
 import Agendar from './Agendar'
 
-<<<<<<< HEAD
 import { makeStyles } from '@material-ui/core/styles';
-=======
+
 import Finalizar from './Finalizar'
->>>>>>> 9ff6d500c8ad65c5bde20097c0b71a35a701b1f2
+
 
 const useStyles = makeStyles({
     button: {
@@ -69,14 +68,11 @@ export const OrdemServicoEdit = props => {
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <ShowButton basePath={basePath} record={data} />
-<<<<<<< HEAD
             <Button label="Finalizar" >
                 <CheckBoxIcon />
             </Button>
             <Button label="Agendar" onClick={handleClickOpen} >
-=======
-            <Button label="Agendar" onClick={handleClickOpen}>
->>>>>>> 9ff6d500c8ad65c5bde20097c0b71a35a701b1f2
+
                 <EventIcon />
             </Button>
             <Button label="Finalizar" onClick={handleClickOpenFinalizar}>
