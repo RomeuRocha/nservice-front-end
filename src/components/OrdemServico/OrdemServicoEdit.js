@@ -23,29 +23,40 @@ import EventIcon from '@material-ui/icons/Event';
 
 import Agendar from './Agendar'
 
+import Finalizar from './Finalizar'
 
 
 
 export const OrdemServicoEdit = props => {
     
-    const [open, setOpen] = React.useState(false);
-
+    const [openAgenda, setOpenAgenda] = React.useState(false);
     
+    const [openFinalizar, setOpenFinlizar] = React.useState(false);
+    
+    const handleClickOpenFinalizar = () => {
+        setOpenFinlizar(true);
+    };
+    const handleCloseFinalizar = () => {
+        setOpenFinlizar(false);
+    };
+
+
     const handleClickOpen = () => {
-      setOpen(true);
+        setOpenAgenda(true);
     };
     const handleClose = () => {
-      setOpen(false);
+        setOpenAgenda(false);
     };
 
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <ShowButton basePath={basePath} record={data} />
-            <Button label="Finalizar">
-                <CheckBoxIcon />
-            </Button>
             <Button label="Agendar" onClick={handleClickOpen}>
                 <EventIcon />
+            </Button>
+            <Button label="Finalizar" onClick={handleClickOpenFinalizar}>
+                <CheckBoxIcon />
+
             </Button>
         </TopToolbar>
     );
@@ -62,7 +73,8 @@ export const OrdemServicoEdit = props => {
                     <SelectInput optionText="description" />
                 </ReferenceInput>
                 
-                <Agendar info={props} handleclose={handleClose} open={open} />
+                <Agendar info={props} handleclose={handleClose} open={openAgenda} />
+                <Finalizar info={props} handleclose={handleCloseFinalizar} open={openFinalizar}/>
             </SimpleForm>
         </Edit>
     );

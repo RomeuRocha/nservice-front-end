@@ -25,6 +25,17 @@ import {
 
 import {
     required,
+    Edit,
+    SimpleForm,
+    SelectArrayInput,
+    ArrayInput,
+    SimpleFormIterator,
+    TextInput,
+    SelectInput,
+    AutocompleteArrayInput,
+    ReferenceArrayInput,
+    ReferenceInput,
+    DateTimeInput
 } from 'react-admin';
 
 import ApiService from '../../service/ApiService'
@@ -65,55 +76,52 @@ const DialogContent = withStyles((theme) => ({
 
 
 
-export default function Agendar(props) {
+export default function Finalizar(props) {
 
-    const initialAgendaState = {
+    const initialOrdemState = {
         id: props.record.id,
         funcionario: props.record.funcionario,
         dateSchedule: props.record.dateSchedule,
-        assunto:{
-            id : props.record.assunto.id
+        assunto: {
+            id: props.record.assunto.id
         },
-        cliente:{
-            id : props.record.cliente.id
+        cliente: {
+            id: props.record.cliente.id
         },
         saveMoment: props.record.saveMoment,
-        situation: "AGENDADO",
-        servicos: props.record.servicos
+        situation: "CONCLUIDO",
+        servicos: props.servicos
     };
 
-    const [agenda, setAgenda] = useState(initialAgendaState)
+    const [ordem, setOrdem] = useState(initialOrdemState)
 
     const { handleclose, open } = props // eventos para fechar caixa de dialogo
 
-    const [funcionarios, setFuncionarios] = useState([]) //lista para campo de pesquisa
-
-    
+    const [servicos, setServicos] = useState([]) //lista para selecioanar serviços
 
     useEffect(() => {
-        
-        retrieveFuncionarios();
+        retrieveServicos();
     }, []);
 
 
 
     const handleInputChange = event => {
         const { name, value } = event.target;
-        setAgenda({ ...agenda, [name]: value });
+        setServicos({ ...ordem, [name]: value });
     };
 
-    const save = () => ApiService.update("ordemservico", agenda.id, agenda)
+    const save = () => ApiService.update("ordemservico", ordem.id, ordem)
         .then(response => {
             handleclose()
-            //console.log("Dados que foram salvos")
-            //console.log(response.data);
+            console.log("Dados que foram salvos")
+            console.log(response.data);
         })
 
-    const retrieveFuncionarios = () => {
-        ApiService.getAll("funcionario")
+    const retrieveServicos = () => {
+        ApiService.getAll("servico")
             .then(response => {
-                setFuncionarios(response.data.content);
-
+                setServicos(response.data.content);
+                console.log(response.data.content)
             })
             .catch(e => {
                 console.log(e);
@@ -129,52 +137,34 @@ export default function Agendar(props) {
                 handleclose ? (
                     <Dialog onClose={handleclose} aria-labelledby="customized-dialog-title" open={open}>
                         <DialogTitle id="customized-dialog-title" onClose={handleclose}>
-                            Agendar Ordem de serviço
+                            Finalizar Ordem de serviço
                         </DialogTitle>
                         <DialogContent dividers>
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                 <Grid container justify="space-around">
-                                    <Autocomplete
-                                        id="combo-box-demo"
-                                        margin="normal"
-                                        options={funcionarios}
-                                        getOptionLabel={(option) => option.nome}
-                                        style={{ width: 300 }}
-                                        renderInput={(params) => <TextField {...params} label="Funcionário" variant="outlined" />}
-                                       
-                                        value={agenda.funcionario}
-                                        name="funcionario"
-                                        onChange={(event, newValue) => {
-                                            setAgenda({ ...agenda, funcionario: newValue });
-                                          }}
-                                         required
-                                    />
 
+                                    <Edit {...props.info} actions={null}>
+                                        <SimpleForm>
+                                            <ArrayInput source="servicos">
+                                                <SimpleFormIterator>
+                                                    <ReferenceInput label="Post" source="id" reference="servico">
+                                                        <SelectInput optionText="description" />
+                                                    </ReferenceInput>
+                                                </SimpleFormIterator>
+                                            </ArrayInput>
 
-                                    <TextField
-                                        id="datetime-local"
-                                        margin="normal"
-                                        label="Data e hora"
-                                        type="datetime"
-                                        type="datetime-local"
-                                        value={agenda.dateSchedule}
-                                        name="dateSchedule"
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        onChange={handleInputChange}
-                                    />
+                                            <DateTimeInput source="attendance" />
+                                            <SelectInput source="situation" label="Situação" choices={[
+                                                { id: 'ANALISE', name: 'Analise' },
+                                                { id: 'AGENDADO', name: 'Agendado' },
+                                                { id: 'CONCLUIDO', name: 'Concluído' },
+                                                { id: 'CANCELADO', name: 'Cancelado' },
+                                            ]} 
+                                            optionValue="id"/>
 
-                                    <Button
-                                        margin="normal"
-                                        variant="contained"
-                                        color="primary"
-                                        size="large"
-                                        startIcon={<SaveIcon />}
-                                        onClick={save}
-                                    >
-                                        Save
-                                     </Button>
+                                        </SimpleForm>
+                                    </Edit>
+
                                 </Grid>
                             </MuiPickersUtilsProvider>
                         </DialogContent>

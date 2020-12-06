@@ -11,9 +11,10 @@ const OrdemServicoFilterSeach = (props) => (
         <TextInput label="Pesquisar cliente" source="cliente" alwaysOn />
         <TextInput label="Pesquisar Assunto" source="assunto" />
         <SelectInput source="situacao" label="Pesquisar Situação" choices={[
-            { id: '1', name: 'Agendado' },
-            { id: '2', name: 'Concluído' },
-            { id: '3', name: 'Cancelado' },
+            { id: '1', name: 'Analise' },
+            { id: '2', name: 'Agendado' },
+            { id: '3', name: 'Concluído' },
+            { id: '4', name: 'Cancelado' },
         ]} />
         
         <DateInput source="dataInicial" label="Pesquisar Data Inicial"/>
