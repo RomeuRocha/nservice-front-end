@@ -23,7 +23,11 @@ import EventIcon from '@material-ui/icons/Event';
 
 import Agendar from './Agendar'
 
+<<<<<<< HEAD
 import { makeStyles } from '@material-ui/core/styles';
+=======
+import Finalizar from './Finalizar'
+>>>>>>> 9ff6d500c8ad65c5bde20097c0b71a35a701b1f2
 
 const useStyles = makeStyles({
     button: {
@@ -41,24 +45,43 @@ const useStyles = makeStyles({
 
 export const OrdemServicoEdit = props => {
     
-    const [open, setOpen] = React.useState(false);
-    const classes = useStyles();
+
+    const [openAgenda, setOpenAgenda] = React.useState(false);
     
+    const [openFinalizar, setOpenFinlizar] = React.useState(false);
+
+    
+    const handleClickOpenFinalizar = () => {
+        setOpenFinlizar(true);
+    };
+    const handleCloseFinalizar = () => {
+        setOpenFinlizar(false);
+    };
+
+
     const handleClickOpen = () => {
-      setOpen(true);
+        setOpenAgenda(true);
     };
     const handleClose = () => {
-      setOpen(false);
+        setOpenAgenda(false);
     };
 
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <ShowButton basePath={basePath} record={data} />
+<<<<<<< HEAD
             <Button label="Finalizar" >
                 <CheckBoxIcon />
             </Button>
             <Button label="Agendar" onClick={handleClickOpen} >
+=======
+            <Button label="Agendar" onClick={handleClickOpen}>
+>>>>>>> 9ff6d500c8ad65c5bde20097c0b71a35a701b1f2
                 <EventIcon />
+            </Button>
+            <Button label="Finalizar" onClick={handleClickOpenFinalizar}>
+                <CheckBoxIcon />
+
             </Button>
         </TopToolbar>
     );
@@ -75,7 +98,8 @@ export const OrdemServicoEdit = props => {
                     <SelectInput optionText="description" />
                 </ReferenceInput>
                 
-                <Agendar info={props} handleclose={handleClose} open={open} />
+                <Agendar info={props} handleclose={handleClose} open={openAgenda} />
+                <Finalizar info={props} handleclose={handleCloseFinalizar} open={openFinalizar}/>
             </SimpleForm>
         </Edit>
     );
