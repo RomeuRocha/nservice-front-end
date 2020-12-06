@@ -1,14 +1,18 @@
-import  React from "react";
+import React from "react";
 import { Edit, SimpleForm, TextInput } from 'react-admin';
+import Actions from '../Util/MyActions'
 
-export const PlanoEdit = props => (
-    <Edit {...props}>
-        <SimpleForm>
-            <TextInput source="id" disabled/>
-            <TextInput source="descricao" />
-            <TextInput source="valorMensal" />
-            <TextInput source="nome" />
-            
-        </SimpleForm>
-    </Edit>
-);
+export const PlanoEdit = props => {
+   
+
+    return (
+        <Edit {...props} >
+            <SimpleForm>
+                <TextInput source="id" disabled />
+                <TextInput source="descricao" />
+                <TextInput source="valorMensal" />
+                <TextInput source="nome" />
+            </SimpleForm>
+        </Edit>
+    );
+}

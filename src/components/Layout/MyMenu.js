@@ -140,7 +140,7 @@ const Menu = ({ onMenuClick, logout }) => {
 
                 <Collapse in={open3} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding className={classes.listInterna}>
-                        <MenuItemLink to={"15"} primaryText="Calender" leftIcon={<AssignmentIndIcon />} />
+                        <MenuItemLink to={"/funcionario"} primaryText="Funcionário" leftIcon={<AssignmentIndIcon />} />
                         <MenuItemLink to="/" primaryText="Dashboard" leftIcon={<ControlPointIcon />} />
                         
                         

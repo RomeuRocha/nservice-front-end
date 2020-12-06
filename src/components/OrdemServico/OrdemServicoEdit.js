@@ -23,13 +23,26 @@ import EventIcon from '@material-ui/icons/Event';
 
 import Agendar from './Agendar'
 
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+    button: {
+        
+        fontWeight: 'bold',
+        // This is JSS syntax to target a deeper element using css selector, here the svg icon for this button
+        '& svg': { color: 'yellow' },
+        '&:hover': {
+            color: '#33c4ff'
+        },
+        color : '#3dc915',
+    },
+});
 
 
 export const OrdemServicoEdit = props => {
     
     const [open, setOpen] = React.useState(false);
-
+    const classes = useStyles();
     
     const handleClickOpen = () => {
       setOpen(true);
@@ -41,10 +54,10 @@ export const OrdemServicoEdit = props => {
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <ShowButton basePath={basePath} record={data} />
-            <Button label="Finalizar">
+            <Button label="Finalizar" >
                 <CheckBoxIcon />
             </Button>
-            <Button label="Agendar" onClick={handleClickOpen}>
+            <Button label="Agendar" onClick={handleClickOpen} >
                 <EventIcon />
             </Button>
         </TopToolbar>

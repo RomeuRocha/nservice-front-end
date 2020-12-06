@@ -66,7 +66,7 @@ const theme = createMuiTheme({
 function App(){
 
   return(
-    <Admin title="Nservice" catchAll={Agenda} layout={MyLayout} theme={theme} dataProvider={DataProvider} dashboard={Dashboard}>
+    <Admin title="Nservice" layout={MyLayout} theme={theme} dataProvider={DataProvider} dashboard={Agenda}>
        <Resource name="servico" options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} />
        <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>

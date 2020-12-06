@@ -2,7 +2,7 @@ import React from "react";
 import { List, Datagrid, TextField, NumberField, DateField, SelectInput, DateInput, DateTimeInput } from 'react-admin';
 import EditButton from '../Util/EditButton'
 import ShowButton from '../Util/ShowButton'
-import ListActions from '../Util/MyActions1'
+import ListActions from '../Util/MyActions'
 import { Filter, TextInput } from 'react-admin';
 
 
