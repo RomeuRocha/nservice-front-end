@@ -6,11 +6,19 @@ const httpClient = fetchUtils.fetchJson;
 
 export default {
     getList: (resource, params) => {
+        /*filtros padrões*/ 
         const { page, perPage } = params.pagination;
         const {order, field } = params.sort;
-        const nomeCliente = params.filter.cliente
-      
+        
        let url = `${apiUrl}/${resource}?linesPerPage=${perPage}&orderBy=${field}&direction=${order}&page=${page-1}`;
+        
+       const textinput = params.filter.textinput
+       if(typeof textinput != "undefined" ){
+        url+= `&textinput=${textinput}`
+      }
+
+      /*Filtros de ordens de serviço (se houverem)*/
+       const nomeCliente = params.filter.cliente
        if(typeof nomeCliente != "undefined" ){
          url+= `&cliente=${nomeCliente}`
        }
@@ -18,7 +26,6 @@ export default {
        if(typeof assunto != "undefined" ){
         url+= `&assunto=${assunto}`
       }
-     
       const situacao = params.filter.situacao
       if(typeof situacao != "undefined" ){
         url+= `&situacao=${situacao}`
@@ -27,12 +34,11 @@ export default {
       if(typeof dataInicial != "undefined" ){
         url+= `&dataInicial=${dataInicial}`
       }
-
       const dataFinal = params.filter.dataFinal
       if(typeof dataFinal != "undefined" ){
-        url+= `&dataFinal=${dataFinal}`
-       
+        url+= `&dataFinal=${dataFinal}` 
       }
+      ////////////////////////////////////////
     
         return httpClient(url).then((response) => ({
             data: response.json.content,
