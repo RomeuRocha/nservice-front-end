@@ -6,10 +6,12 @@ import Grafico1 from '../Graficos/Grafico1';
 import Grafico2 from '../Graficos/Grafico2';
 import { makeStyles } from '@material-ui/core/styles';
 import ApiService from '../../service/ApiService';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 
 const useStyles = makeStyles({
-    
+
     root: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         border: 0,
@@ -50,16 +52,16 @@ const useStyles = makeStyles({
         margin: '20px 20px 80px 20px',
         textAlign: "center",
     },
-    
+
     graficos: {
         position: 'relative',
         float: "right",
-        margin: '70px',
+        margin: '5px',
     },
     graficos1: {
         position: 'relative',
         float: "left",
-        margin: '10px',
+        margin: '5px',
     },
     divTop: {
 
@@ -111,8 +113,74 @@ export default () => {
     };
 
     return (
+
         <div>
-            <div >
+            <Grid container spacing={3}>
+                <Grid item xs>
+                    <Paper >
+                        <div className={classes.box1}>
+                            <h6>Total de Adesões</h6>
+                            <h1>{ativos}</h1>
+                        </div>
+                    </Paper>
+                </Grid>
+                <Grid item xs>
+                    <Paper c>
+                        <div className={classes.box2}>
+                            <h6>Clientes</h6>
+                            <h1>{totalCliente}</h1>
+                        </div>
+                    </Paper>
+                </Grid>
+                <Grid item xs>
+                    <Paper >
+                        <div className={classes.root}>
+                            <h6>OS Agendadas</h6>
+                            <h1>{osAbertas}</h1>
+                        </div>
+                    </Paper>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3}>
+                <Grid item xs>
+                    <Paper className={classes.paper}>
+                        <div className={classes.graficos1}>
+                            <Grafico1 />
+                        </div>
+                    </Paper>
+                </Grid>
+
+                <Grid item xs>
+                    <Paper className={classes.paper}>
+                        <div className={classes.graficos}>
+                            <Grafico2 />
+                        </div>
+                    </Paper>
+                </Grid>
+            </Grid>
+            <Grid container spacing={3}>
+                <Grid item xs>
+                    <Paper className={classes.paper}>
+                        <Card className={classes.graficos1}>
+                            <Title title="Dashboard" />
+                            <CardHeader title="Welcome to the administration" />
+                            <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+                            <p>Aqui vai entrar gráficos</p>
+                            <ul>
+                                <li>Ordens de serviço em aberto</li>
+                                <li>Adesões ativas</li>
+                                <li>Status de conexão ??</li>
+                                <li>Gráficos de serviços mais frequentes</li>
+                                <li>Gráficos de assuntos mais frequentes</li>
+                                <li>Grafico com os atendidas em cada mês</li>
+                                <li>Grafico número de adesão em linha </li>
+                            </ul>
+
+                        </Card>
+                    </Paper>
+                </Grid>
+            </Grid>
+            {/*<div >
                 <div className={classes.box1}>
                     <h6>Total de Adesões</h6>
                     <h1>{ativos}</h1>
@@ -138,7 +206,7 @@ export default () => {
                 <Grafico2 />
             </div>
 
-            <Card  className={classes.graficos1}>
+            <Card className={classes.graficos1}>
                 <Title title="Dashboard" />
                 <CardHeader title="Welcome to the administration" />
                 <CardContent>Lorem ipsum sic dolor amet...</CardContent>
@@ -153,8 +221,8 @@ export default () => {
                     <li>Grafico número de adesão em linha </li>
                 </ul>
 
-            </Card>
+            </Card>*/}
 
-        </div>
+            </div>
     );
 }

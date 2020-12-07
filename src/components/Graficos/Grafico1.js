@@ -66,7 +66,7 @@ export default () => {
     <Paper className={classes.root}>
       <Chart
         data={graf}
-        width={600}
+        width={450}
         height={300}
       >
         <ValueAxis />
