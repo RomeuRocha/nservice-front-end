@@ -20,6 +20,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import Divider from '@material-ui/core/Divider';
 
 
 export const AdesaoCreate = props => {
@@ -61,8 +62,12 @@ export const AdesaoCreate = props => {
         }
     };
 
+    const AdesaoTitle = ({ record }) => {
+        return <span>Nova Adesão</span>;
+    };
+
     return (
-        <Create {...props}>
+        <Create {...props} title={<AdesaoTitle />} >
             <SimpleForm>
                 <AutocompleteInput
                     source="cliente.id"
@@ -72,11 +77,13 @@ export const AdesaoCreate = props => {
                     matchSuggestion={optionMatchClient}
                     label="Cliente" />
 
+                <Divider />
+
                 <ReferenceInput label="Plano" source="plano.id" reference="plano">
                     <SelectInput optionText="nome" />
                 </ReferenceInput>
 
-                <p>-------------ENDEREÇO--------------</p>
+                <Divider />
 
                 <SelectInput source="endereco.uf" label="UF" choices={[
                     { id: 'AC', name: 'AC' },
@@ -113,7 +120,6 @@ export const AdesaoCreate = props => {
                 <TextInput source="endereco.rua" label="Rua" />
                 <TextInput source="endereco.bairro" label="Bairro" />
                 <TextInput source="endereco.numero" label="Número" />
-                
 
             </SimpleForm>
         </Create>

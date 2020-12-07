@@ -82,8 +82,12 @@ export const OrdemServicoCreate = props => {
         }   
     };
 
+    const OrdemTitle = ({ record }) => {
+        return <span>Nova Ordem de serviço</span>;
+    };
+
     return (
-            <Create {...props} >
+            <Create title={<OrdemTitle />} {...props} >
                 <SimpleForm>
                     <AutocompleteInput 
                     source="cliente.id" 
