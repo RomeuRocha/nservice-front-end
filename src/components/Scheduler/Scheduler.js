@@ -61,8 +61,7 @@ export default () => {
   const [agenda, setAgenda] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date)
   const [locale, setLocale] = useState("pt-BR")
-  const redirect = useRedirect();
-
+  
   useEffect(() => {
     loadAgenda();
   }, []);
@@ -77,27 +76,7 @@ export default () => {
         console.log(e);
       });
   };
-  //botão para edição
-  const Header = withStyles(style, { name: 'Header' })(({
-    children, appointmentData, classes,  toggleVisibility,
-    onAppointmentMetaChange, data, onClick,
-  }) => (
-      <AppointmentTooltip.Header>
-        <IconButton
-          eslint-disable-next-line no-alert
-          onClick={({ event }) => {
-          console.log();
-          //toggleVisibility();
-          //onAppointmentMetaChange({ target: target.parentElement.parentElement, data });
-        }}
-      
 
-        >
-          <MoreIcon />
-
-        </IconButton>
-      </AppointmentTooltip.Header>
-    ));
 
   return (
     <Paper>
@@ -116,7 +95,6 @@ export default () => {
         <ViewSwitcher />
         <Resources data={resources} />
         <AppointmentTooltip
-          headerComponent={Header}
           showCloseButton
         />
         <AppointmentForm readOnly />
