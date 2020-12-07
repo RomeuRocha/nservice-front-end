@@ -99,7 +99,7 @@ const Menu = ({ onMenuClick, logout }) => {
                         <MenuItemLink to="/adesao/create" primaryText="Nova Adesão" leftIcon={<ControlPointIcon />} />
                         <MenuItemLink to="/adesao" primaryText="Lista de Adesões" leftIcon={<ListIcon />} />
                         <MenuItemLink to="/plano" primaryText="Planos" leftIcon={<EventNoteIcon />} />
-                        <MenuItemLink to="/cancelamento" primaryText="Cancelamentos" leftIcon={<NoSimIcon />} />
+                        
                     </List>
                 </Collapse>
 

@@ -75,7 +75,6 @@ function App(){
        <Resource name="funcionario" options={{ label: 'Funcionários' }} list={FuncionarioList} edit={FuncionarioEdit} create={FuncionarioCreate} show={ShowGuesser} icon={AssignmentIndIcon}/>
        <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemServicoList} edit={OrdemServicoEdit} create={OrdemServicoCreate} show={OrdemServicoShow} icon={StorageIcon}/>
        <Resource name="plano" list={PlanoList} edit={PlanoEdit} create={PlanoCreate} show={ShowGuesser} icon={ListAltIcon}/>
-       <Resource name="cancelamento" list={CancelamentoList} edit={CancelamentoEdit} create={CancelamentoCreate} show={ShowGuesser} icon={StorageIcon}/>
        <Resource name="adesao" list={AdesaoList} edit={AdesaoEdit} create={AdesaoCreate} show={AdesaoShow} icon={StorageIcon}/>
     
     </Admin>
