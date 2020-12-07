@@ -5,7 +5,7 @@ import EmailField from '../Util/EmailField'
 import ShowButton from '../Util/ShowButton'
 import ListActions from '../Util/MyActions'
 
-import {Filter,TextInput} from 'react-admin';
+import {Filter,TextInput,DeleteButton} from 'react-admin';
 
 const ClienteFilterSeach = (props) => (
     <Filter {...props}>
@@ -21,8 +21,9 @@ export const ClienteList = props => (
             <EmailField source="email" />
             <TextField source="whatsApp" />
             <TextField source="cpf" />
-            <EditButton/>
+            <EditButton />
             <ShowButton />
+            <DeleteButton />
         </Datagrid>
     </List>
 );

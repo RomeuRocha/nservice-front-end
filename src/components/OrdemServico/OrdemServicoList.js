@@ -3,7 +3,7 @@ import { List, Datagrid, TextField, NumberField, DateField, SelectInput, DateInp
 import EditButton from '../Util/EditButton'
 import ShowButton from '../Util/ShowButton'
 import ListActions from '../Util/MyActions'
-import { Filter, TextInput } from 'react-admin';
+import { Filter, TextInput,DeleteButton } from 'react-admin';
 
 
 const OrdemServicoFilterSeach = (props) => (
@@ -37,6 +37,7 @@ export const OrdemServicoList = props => (
 
             <EditButton />
             <ShowButton />
+            <DeleteButton />
         </Datagrid>
     </List>
 );

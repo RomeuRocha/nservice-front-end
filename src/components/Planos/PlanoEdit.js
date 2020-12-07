@@ -20,9 +20,9 @@ export const PlanoEdit = props => {
         <Edit actions={<PlanoEditActions/>} {...props} >
             <SimpleForm>
                 <TextInput source="id" disabled />
+                <TextInput source="nome" />
                 <TextInput source="descricao" />
                 <TextInput source="valorMensal" />
-                <TextInput source="nome" />
             </SimpleForm>
         </Edit>
     );

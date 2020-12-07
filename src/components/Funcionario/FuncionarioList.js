@@ -1,10 +1,9 @@
 import  React from "react";
 import { List, Datagrid, TextField} from 'react-admin';
 import EditButton from '../Util/EditButton'
-import EmailField from '../Util/EmailField'
 import ShowButton from '../Util/ShowButton'
 import ListActions from '../Util/MyActions'
-import {Filter,TextInput} from 'react-admin';
+import {Filter,TextInput,DeleteButton} from 'react-admin';
 
 const FuncionarioFilterSeach = (props) => (
     <Filter {...props}>
@@ -17,14 +16,11 @@ export const FuncionarioList = props => (
         <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="nome" />
-            <EmailField source="email" />
-            <TextField source="whatsApp" />
             <TextField source="cargo" />
             <TextField source="departamento" />
-            <TextField source="login" />
-            <TextField source="senha" />
             <EditButton />
             <ShowButton />
+            <DeleteButton />
         </Datagrid>
     </List>
 );

@@ -28,9 +28,10 @@ export const AdesaoShow = props => (
             <TextField source="plano.descricao" label="Descrição"/>
             <NumberField source="valor" />
             <DateField source="data" label="Data de adesão"/>
-            <p>-------------------------------------</p>
-            <h3>Endereço</h3>
-            <TextField source="endereco.cidade.nome" label="Cidade"/>
+            <p>-------------ENDEREÇO--------------</p>  
+            <TextField source="endereco.uf" label="UF"/>
+            <TextField source="endereco.cidade" label="Cidade"/>
+            <TextField source="endereco.cep" label="CEP"/>
             <TextField source="endereco.bairro" label="Bairro"/>
             <TextField source="endereco.rua" label="Rua"/>
             <TextField source="endereco.numero" label="Número"/>
