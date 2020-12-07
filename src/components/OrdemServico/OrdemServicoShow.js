@@ -45,7 +45,7 @@ export const OrdemServicoShow = props => (
 
 
             
-            <ArrayField source="servicos">
+            <ArrayField source="servicos" label="Serviços">
                 <Datagrid>
                     <TextField source="id" />
                     <TextField source="description" />
