@@ -8,11 +8,21 @@ import {
     DateField,
     ArrayField,
     Datagrid,
-
+    TopToolbar,
+    EditButton,
 } from 'react-admin';
+import MyListButton from '../Util/ListButton';
+
+const OrdemShowActions = ({ basePath, data }) => (
+    <TopToolbar>
+        <MyListButton basePath={basePath} />
+        <EditButton basePath={basePath} record={data} />
+        
+    </TopToolbar>
+);
 
 export const OrdemServicoShow = props => (
-    <Show {...props}>
+    <Show {...props} actions={<OrdemShowActions/>}>
         <SimpleShowLayout>
             <TextField source="id" />
             <TextField source="cliente.nome" label="Cliente" />

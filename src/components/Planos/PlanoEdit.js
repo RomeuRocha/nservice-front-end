@@ -1,12 +1,23 @@
 import React from "react";
-import { Edit, SimpleForm, TextInput } from 'react-admin';
-import Actions from '../Util/MyActions'
+import { Edit, 
+    SimpleForm, 
+    TextInput,
+    ListButton,
+    ShowButton,
+    TopToolbar,
+} from 'react-admin';
+import MyListButton from '../Util/ListButton'
 
 export const PlanoEdit = props => {
-   
+
+    const PlanoEditActions = ({ basePath}) => (
+        <TopToolbar>
+            <MyListButton basePath={basePath} />            
+        </TopToolbar>
+    );
 
     return (
-        <Edit {...props} >
+        <Edit actions={<PlanoEditActions/>} {...props} >
             <SimpleForm>
                 <TextInput source="id" disabled />
                 <TextInput source="descricao" />

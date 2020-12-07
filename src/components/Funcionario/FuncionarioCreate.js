@@ -1,8 +1,16 @@
 import  React from "react";
-import { Create, SimpleForm, TextInput } from 'react-admin';
+import { Create, EditButton, SimpleForm, TextInput, ListButton, TopToolbar } from 'react-admin';
 
-export const FuncionarioCreate = props => (
-    <Create {...props}>
+
+export const FuncionarioCreate = props => {
+    
+    const FuncionarioEditActions = ({ basePath, data, resource }) => (
+        <TopToolbar>
+            <ListButton basePath={basePath} />
+        </TopToolbar>
+    )
+    return(
+    <Create {...props} actions={<FuncionarioEditActions/>}>
         <SimpleForm>
             <TextInput source="nome" />
             <TextInput source="email" />
@@ -13,4 +21,5 @@ export const FuncionarioCreate = props => (
             <TextInput source="senha" />
         </SimpleForm>
     </Create>
-);
+    );
+}

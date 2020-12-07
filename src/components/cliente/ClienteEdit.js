@@ -1,8 +1,17 @@
 import  React from "react";
-import { Edit, SimpleForm, TextInput } from 'react-admin';
+import { Edit, SimpleForm, TextInput, ShowButton, ListButton, TopToolbar } from 'react-admin';
+import MyListButton from '../Util/ListButton';
 
-export const ClienteEdit = props => (
-    <Edit {...props}>
+export const ClienteEdit = props => {
+    
+    const ClienteEditActions = ({ basePath, data, resource }) => (
+        <TopToolbar>
+            <MyListButton basePath={basePath} />
+            <ShowButton basePath={basePath} record={data} />
+        </TopToolbar>
+    )
+    return(
+    <Edit {...props} actions={<ClienteEditActions/>}>
         <SimpleForm>
             <TextInput source="id" disabled />
             <TextInput source="nome" />
@@ -11,4 +20,5 @@ export const ClienteEdit = props => (
             <TextInput source="cpf" />
         </SimpleForm>
     </Edit>
-);
+    );
+    }

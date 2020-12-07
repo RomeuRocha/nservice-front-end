@@ -18,7 +18,8 @@ import {
     DateTimeInput,
     useRedirect,
     useNotify,
-    useRefresh
+    useRefresh,
+    ListButton,
 } from 'react-admin';
 
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
@@ -29,6 +30,7 @@ import Agendar from './Agendar'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Finalizar from './Finalizar'
+import MyListButton from '../Util/ListButton'
 
 
 const useStyles = makeStyles({
@@ -72,6 +74,7 @@ export const OrdemServicoEdit = props => {
 
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
+            <MyListButton basePath={basePath}/>
             <ShowButton basePath={basePath} record={data} />
            
             <Button label="Agendar" onClick={handleClickOpen} >

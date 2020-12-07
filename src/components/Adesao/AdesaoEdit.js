@@ -16,10 +16,12 @@ import {
     ListButton,
     ShowButton
 } from 'react-admin';
+import MyListButton from '../Util/ListButton';
+
 
 const AdesaoEditActions = ({ basePath, data }) => (
     <TopToolbar>
-        <ListButton basePath={basePath} />
+        <MyListButton basePath={basePath} />
         <ShowButton basePath={basePath} record={data} />
     </TopToolbar>
 );
@@ -40,9 +42,9 @@ export const AdesaoEdit = props => (
             <DateInput source="data" />
 
             
-            <TextInput source="endereco.rua" />
-            <TextInput source="endereco.numero" />
-            <TextInput source="endereco.bairro" />
+            <TextInput source="endereco.rua" label="Rua"/>
+            <TextInput source="endereco.numero" label="Número"/>
+            <TextInput source="endereco.bairro" label="Bairro"/>
             
         
         </SimpleForm>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from '@material-ui/core';
-import { Title } from 'react-admin';
+
 import Scheduler from '../Scheduler/Scheduler';
 import Grafico1 from '../Graficos/Grafico1';
 import Grafico2 from '../Graficos/Grafico2';
@@ -161,22 +160,7 @@ export default () => {
             <Grid container spacing={3}>
                 <Grid item xs>
                     <Paper className={classes.paper}>
-                        <Card className={classes.graficos1}>
-                            <Title title="Dashboard" />
-                            <CardHeader title="Welcome to the administration" />
-                            <CardContent>Lorem ipsum sic dolor amet...</CardContent>
-                            <p>Aqui vai entrar gráficos</p>
-                            <ul>
-                                <li>Ordens de serviço em aberto</li>
-                                <li>Adesões ativas</li>
-                                <li>Status de conexão ??</li>
-                                <li>Gráficos de serviços mais frequentes</li>
-                                <li>Gráficos de assuntos mais frequentes</li>
-                                <li>Grafico com os atendidas em cada mês</li>
-                                <li>Grafico número de adesão em linha </li>
-                            </ul>
-
-                        </Card>
+                        
                     </Paper>
                 </Grid>
             </Grid>

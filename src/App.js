@@ -19,6 +19,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import {AssuntoList} from './components/Assunto/AssuntoList'
 import {AssuntoEdit} from './components/Assunto/AssuntoEdit'
 import {AssuntoCreate} from './components/Assunto/AssuntoCreate'
+import {AssuntoShow} from './components/Assunto/AssuntoShow'
 import SubjectIcon from '@material-ui/icons/Subject';
 
 import {ClienteList} from './components/cliente/ClienteList'
@@ -70,7 +71,7 @@ function App(){
   return(
     <Admin title="Nservice" layout={MyLayout} theme={theme} dataProvider={DataProvider} dashboard={Agenda}>
        <Resource name="servico" options={{ label: 'Serviços' }} list={ServicoList} edit={ServicoEdit} create={ServicoCreate} show={ServicoShow} icon={WorkIcon} />
-       <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={ShowGuesser} icon={SubjectIcon}/>
+       <Resource name="assunto" list={AssuntoList} edit={AssuntoEdit} create={AssuntoCreate} show={AssuntoShow} icon={SubjectIcon}/>
        <Resource name="cliente" list={ClienteList} edit={ClienteEdit} create={ClienteCreate} show={ShowGuesser} icon={GroupIcon}/>
        <Resource name="funcionario" options={{ label: 'Funcionários' }} list={FuncionarioList} edit={FuncionarioEdit} create={FuncionarioCreate} show={ShowGuesser} icon={AssignmentIndIcon}/>
        <Resource name="ordemservico" options={{ label: 'Ordem de Serviço' }} list={OrdemServicoList} edit={OrdemServicoEdit} create={OrdemServicoCreate} show={OrdemServicoShow} icon={StorageIcon}/>

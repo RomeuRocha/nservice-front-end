@@ -3,6 +3,7 @@ import { Edit, SimpleForm, TextInput, NumberInput } from 'react-admin';
 
 import { TopToolbar, ListButton, ShowButton } from 'react-admin';
 import { makeStyles } from '@material-ui/core/styles';
+import MyListButton from '../Util/ListButton'
 
 const useStyles = makeStyles({
     button: {
@@ -23,8 +24,8 @@ export const ServicoEdit = props => {
     const classes = useStyles();
     const ServicoEditActions = ({ basePath, data, }) => (
         <TopToolbar>
-            <ListButton basePath={basePath} className={classes.button}/>
-            <ShowButton basePath={basePath} record={data} className={classes.button}/>
+            <MyListButton basePath={basePath} />
+            <ShowButton basePath={basePath} record={data} />
         </TopToolbar>
     );
 

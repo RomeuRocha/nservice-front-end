@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import Scheduler from './Scheduler';
 import Dashboard from '../dashboard/Dashboard'
 
+import Sobre from '../dashboard/Sobre'
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -66,7 +68,7 @@ export default function SimpleTabs() {
       <AppBar position="static" className={classes.appBar}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Dashboard" {...a11yProps(0)} />
-          <Tab label="Calendário" {...a11yProps(1)} />
+          <Tab label="Agenda" {...a11yProps(1)} />
           <Tab label="Sobre" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
@@ -77,7 +79,7 @@ export default function SimpleTabs() {
         <Scheduler/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Sobre
+        <Sobre/>
       </TabPanel>
     </div>
   );

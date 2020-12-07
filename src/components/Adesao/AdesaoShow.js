@@ -7,11 +7,12 @@ import {
     TopToolbar,
     ListButton,
     EditButton
-} from 'react-admin'
+} from 'react-admin';
+import MyListButton from '../Util/ListButton';
 
 const AdesaoShowActions = ({ basePath, data }) => (
     <TopToolbar>
-        <ListButton basePath={basePath} />
+        <MyListButton basePath={basePath} />
         <EditButton basePath={basePath} record={data} />
         
     </TopToolbar>
