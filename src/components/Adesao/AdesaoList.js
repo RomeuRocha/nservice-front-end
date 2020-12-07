@@ -8,7 +8,7 @@ import { Filter, TextInput } from 'react-admin';
 
 const AdesaoFilterSeach = (props) => (
     <Filter {...props}>
-        <TextInput label="Pesquisar Adesao" source="cliente" alwaysOn />        
+        <TextInput label="Pesquisar Adesao" source="textinput" alwaysOn />        
     </Filter>
 );
 

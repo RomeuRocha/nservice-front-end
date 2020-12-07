@@ -8,7 +8,7 @@ import { Filter, TextInput } from 'react-admin';
 
 const OrdemServicoFilterSeach = (props) => (
     <Filter {...props} >
-        <TextInput label="Pesquisar cliente" source="cliente" alwaysOn />
+        <TextInput label="Pesquisar cliente" source="textinput" alwaysOn />
         <TextInput label="Pesquisar Assunto" source="assunto" />
         <SelectInput source="situacao" label="Pesquisar Situação" choices={[
             { id: '1', name: 'Analise' },

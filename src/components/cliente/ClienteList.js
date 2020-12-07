@@ -9,7 +9,7 @@ import {Filter,TextInput} from 'react-admin';
 
 const ClienteFilterSeach = (props) => (
     <Filter {...props}>
-        <TextInput label="Procurar" source="description" alwaysOn />
+        <TextInput label="Procurar" source="textinput" alwaysOn />
     </Filter>
 );
 

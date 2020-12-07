@@ -8,7 +8,7 @@ import {Filter,TextInput} from 'react-admin';
 
 const PlanoFilterSeach = (props) => (
     <Filter {...props}>
-        <TextInput label="Procurar" source="description" alwaysOn />
+        <TextInput label="Procurar" source="textinput" alwaysOn />
     </Filter>
 );
 
