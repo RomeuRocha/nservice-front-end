@@ -3,12 +3,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-import { Admin, Resource,ListGuesser,EditGuesser,ShowGuesser} from 'react-admin';
+import { Admin, Resource,ShowGuesser} from 'react-admin';
 import MyLayout from './components/Layout/MyLayout'
 
 import DataProvider from './service/DataProvider'
 
-import Dashboard from './components/dashboard/Dashboard'
 
 import {ServicoList} from './components/Servico/ServicoList'
 import {ServicoEdit} from './components/Servico/ServicoEdit'
@@ -43,10 +42,6 @@ import {PlanoList} from './components/Planos/PlanoList'
 import {PlanoEdit} from './components/Planos/PlanoEdit'
 import {PlanoCreate} from './components/Planos/PlanoCreate'
 
-import {CancelamentoList} from './components/Cancelamento/CancelamentoList'
-import {CancelamentoEdit} from './components/Cancelamento/CancelamentoEdit'
-import {CancelamentoCreate} from './components/Cancelamento/CancelamentoCreate'
-
 import {AdesaoList} from './components/Adesao/AdesaoList'
 import {AdesaoEdit} from './components/Adesao/AdesaoEdit'
 import {AdesaoCreate} from './components/Adesao/AdesaoCreate'
@@ -54,7 +49,6 @@ import {AdesaoShow} from './components/Adesao/AdesaoShow'
 
 
 import { createMuiTheme } from '@material-ui/core/styles';
-import myTheme from './components/Layout/MyTheme'
 
 import Agenda from './components/Scheduler/Agenda'
 

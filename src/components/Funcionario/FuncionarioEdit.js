@@ -5,9 +5,13 @@ export const FuncionarioEdit = props => (
     <Edit {...props}>
         <SimpleForm>
             <TextInput source="id" disabled/>
-            <TextInput source="descricao" />
-            <TextInput source="valorMensal" />
             <TextInput source="nome" />
+            <TextInput source="email" />
+            <TextInput source="whatsApp" />
+            <TextInput source="cargo" />
+            <TextInput source="departamento" />
+            <TextInput source="login" />
+            <TextInput source="senha" />
         </SimpleForm>
     </Edit>
 );

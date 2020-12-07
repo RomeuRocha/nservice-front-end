@@ -66,7 +66,7 @@ export default function SimpleTabs() {
       <AppBar position="static" className={classes.appBar}>
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Dashboard" {...a11yProps(0)} />
-          <Tab label="Calendário" {...a11yProps(1)} />
+          <Tab label="Agenda" {...a11yProps(1)} />
           <Tab label="Sobre" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
@@ -77,7 +77,24 @@ export default function SimpleTabs() {
         <Scheduler/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Sobre
+        <p>N.Service v1.0(BETA)</p>
+        <p>Front-End :</p>
+        <ul>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>React-admin</li>
+          <li>Axios</li>
+          <li>...</li>
+        </ul>
+        <p>Back-End :</p>
+        <ul>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>H2 Database (fase de teste)</li>
+          <li>Maven</li>
+          <li>...</li>
+        </ul>
+
       </TabPanel>
     </div>
   );
