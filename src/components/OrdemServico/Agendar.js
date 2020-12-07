@@ -25,6 +25,8 @@ import {
 
 import {
     required,
+    useRedirect,
+    useNotify
 } from 'react-admin';
 
 import ApiService from '../../service/ApiService'
@@ -67,6 +69,9 @@ const DialogContent = withStyles((theme) => ({
 
 export default function Agendar(props) {
 
+    const redirect = useRedirect();
+    const notify = useNotify();
+
     const initialAgendaState = {
         id: props.record.id,
         funcionario: props.record.funcionario,
@@ -105,6 +110,8 @@ export default function Agendar(props) {
     const save = () => ApiService.update("ordemservico", agenda.id, agenda)
         .then(response => {
             handleclose()
+            notify(`Agendamento concluído com sucesso`)
+            redirect(`/ordemservico/${response.data.id}/show`); 
             //console.log("Dados que foram salvos")
             //console.log(response.data);
         })

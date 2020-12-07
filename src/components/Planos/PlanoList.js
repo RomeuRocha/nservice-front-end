@@ -16,9 +16,10 @@ export const PlanoList = props => (
     <List {...props} actions={<ListActions/>} filters={<PlanoFilterSeach />} title="Planos">
         <Datagrid rowClick="show">
             <TextField source="id" />
+            <TextField source="nome" />
             <TextField source="descricao" />
             <TextField source="valorMensal" />
-            <TextField source="nome" />
+            
             <EditButton />
             <ShowButton />
             <DeleteButton />

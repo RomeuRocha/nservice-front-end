@@ -16,6 +16,7 @@ import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 
 import SaveIcon from '@material-ui/icons/Save';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 import {
     MuiPickersUtilsProvider,
@@ -35,7 +36,10 @@ import {
     AutocompleteArrayInput,
     ReferenceArrayInput,
     ReferenceInput,
-    DateTimeInput
+    DateTimeInput,
+    useRedirect,
+    useNotify,
+    useRefresh
 } from 'react-admin';
 
 import ApiService from '../../service/ApiService'
@@ -93,6 +97,10 @@ export default function Finalizar(props) {
         servicos: props.servicos
     };
 
+    const notify = useNotify();
+    const refresh = useRefresh();
+    const redirect = useRedirect();
+
     const [ordem, setOrdem] = useState(initialOrdemState)
 
     const { handleclose, open } = props // eventos para fechar caixa de dialogo
@@ -128,8 +136,11 @@ export default function Finalizar(props) {
             });
     };
 
-
-
+    const Botao = () =>{
+        <Button >
+            <AddCircleOutlineIcon />
+        </Button>
+    }
 
     return (
         <>
@@ -143,17 +154,17 @@ export default function Finalizar(props) {
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                 <Grid container justify="space-around">
 
-                                    <Edit {...props.info} actions={null}>
+                                    <Edit  {...props.info}  actions={null} >
                                         <SimpleForm>
-                                            <ArrayInput source="servicos">
-                                                <SimpleFormIterator>
-                                                    <ReferenceInput label="Post" source="id" reference="servico">
+                                            <ArrayInput source="servicos" label=" ">
+                                                <SimpleFormIterator >
+                                                    <ReferenceInput label="Serviço" source="id" reference="servico">
                                                         <SelectInput optionText="description" />
                                                     </ReferenceInput>
                                                 </SimpleFormIterator>
                                             </ArrayInput>
 
-                                            <DateTimeInput source="attendance" />
+                                            <DateTimeInput source="attendance" label="Data de atendimento"/>
                                             <SelectInput source="situation" label="Situação" choices={[
                                                 { id: 'ANALISE', name: 'Analise' },
                                                 { id: 'AGENDADO', name: 'Agendado' },

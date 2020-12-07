@@ -15,7 +15,10 @@ import {
     TopToolbar,
     ShowButton,
     Button,
-    DateTimeInput
+    DateTimeInput,
+    useRedirect,
+    useNotify,
+    useRefresh
 } from 'react-admin';
 
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
@@ -50,6 +53,8 @@ export const OrdemServicoEdit = props => {
     const [openFinalizar, setOpenFinlizar] = React.useState(false);
 
     
+
+    
     const handleClickOpenFinalizar = () => {
         setOpenFinlizar(true);
     };
@@ -68,9 +73,7 @@ export const OrdemServicoEdit = props => {
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <ShowButton basePath={basePath} record={data} />
-            <Button label="Finalizar" >
-                <CheckBoxIcon />
-            </Button>
+           
             <Button label="Agendar" onClick={handleClickOpen} >
 
                 <EventIcon />
