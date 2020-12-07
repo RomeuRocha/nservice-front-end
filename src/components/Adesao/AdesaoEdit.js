@@ -26,8 +26,12 @@ const AdesaoEditActions = ({ basePath, data }) => (
     </TopToolbar>
 );
 
+const AdesaoTitle = ({ record }) => {
+    return <span>Adesão #{record ? `${record.id}` : ''}</span>;
+};
+
 export const AdesaoEdit = props => (
-    <Edit {...props} actions={<AdesaoEditActions />} >
+    <Edit {...props} title={<AdesaoTitle />} actions={<AdesaoEditActions />} >
         <SimpleForm>
             <TextInput source="id" disabled />
             <ReferenceInput label="Cliente" source="cliente.id" reference="cliente">

@@ -25,8 +25,12 @@ const OrdemShowActions = ({ basePath, data }) => (
     </TopToolbar>
 );
 
+const OrdemTitle = ({ record }) => {
+    return <span>Ordem de Serviço #{record ? `${record.id}` : ''}</span>;
+};
+
 export const OrdemServicoShow = props => (
-    <Show {...props} actions={<OrdemShowActions />}>
+    <Show {...props} title={<OrdemTitle />} actions={<OrdemShowActions />}>
         <SimpleShowLayout>
 
             <TextField source="id" />

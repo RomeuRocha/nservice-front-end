@@ -72,6 +72,10 @@ export const OrdemServicoEdit = props => {
         setOpenAgenda(false);
     };
 
+    const OrdemTitle = ({ record }) => {
+        return <span>Ordem de Serviço #{record ? `${record.id}` : ''}</span>;
+    };
+
     const OrdemEditActions = ({ basePath, data, resource }) => (
         <TopToolbar>
             <MyListButton basePath={basePath}/>
@@ -89,7 +93,7 @@ export const OrdemServicoEdit = props => {
     );
 
     return(
-        <Edit actions={<OrdemEditActions />} {...props}>
+        <Edit actions={<OrdemEditActions />} title={<OrdemTitle />} {...props}>
             <SimpleForm>
                 <TextInput source="id" disabled />
                 <ReferenceInput label="Cliente" source="cliente.id" reference="cliente" validate={[required()]}>

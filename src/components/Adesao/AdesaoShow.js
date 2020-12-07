@@ -20,8 +20,11 @@ const AdesaoShowActions = ({ basePath, data }) => (
     </TopToolbar>
 );
 
+const AdesaoTitle = ({ record }) => {
+    return <span>Adesão #{record ? `${record.id}` : ''}</span>;
+};
 export const AdesaoShow = props => (
-    <Show {...props} actions={<AdesaoShowActions />}>
+    <Show {...props} title={<AdesaoTitle />} actions={<AdesaoShowActions />}>
         <SimpleShowLayout>
 
             <TextField source="id" />
